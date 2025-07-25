@@ -395,13 +395,14 @@
     }
 
     .bliss-mega-menu .wp-nav-menu > .menu-item .sub-menu.mega-menu,
-    .bliss-mega-menu ul.wp-nav-menu > li.menu-item .sub-menu.mega-menu {
+    .bliss-mega-menu ul.wp-nav-menu > li.menu-item .sub-menu.mega-menu,
+    .bliss-mega-menu .sub-menu.mega-menu[data-bliss-mega="true"] {
         position: static !important;
         width: 100% !important;
         box-shadow: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
-        transform: none !important;
+        transform: translateX(0) translateY(0) !important;
         background: #2563eb !important;
         max-height: 0 !important;
         overflow: hidden !important;
@@ -416,12 +417,16 @@
     }
 
     .bliss-mega-menu .wp-nav-menu > .menu-item.mobile-open .sub-menu.mega-menu,
-    .bliss-mega-menu ul.wp-nav-menu > li.menu-item.mobile-open .sub-menu.mega-menu {
+    .bliss-mega-menu ul.wp-nav-menu > li.menu-item.mobile-open .sub-menu.mega-menu,
+    .bliss-mega-menu .menu-item.mobile-open .sub-menu.mega-menu[data-bliss-mega="true"] {
         opacity: 1 !important;
         visibility: visible !important;
         max-height: none !important;
         overflow: visible !important;
         display: block !important;
+        transform: translateX(0) translateY(0) !important;
+        left: 0 !important;
+        margin-left: 0 !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .mega-content,
