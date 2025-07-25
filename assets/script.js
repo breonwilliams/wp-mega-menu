@@ -97,48 +97,6 @@
             }, 250);
         });
         
-        // Position mega menus below navbar on desktop
-        function positionMegaMenus() {
-            if (window.innerWidth > 768) {
-                const megaMenus = document.querySelectorAll('.bliss-mega-menu');
-                
-                megaMenus.forEach(function(menuWrapper) {
-                    const navbar = menuWrapper.querySelector('.navbar');
-                    const menuItems = menuWrapper.querySelectorAll('.menu-item-has-children');
-                    
-                    if (navbar && menuItems.length) {
-                        menuItems.forEach(function(menuItem) {
-                            const megaMenu = menuItem.querySelector('.sub-menu.mega-menu');
-                            if (megaMenu) {
-                                // Set initial position when page loads
-                                const navbarRect = navbar.getBoundingClientRect();
-                                megaMenu.style.top = (navbarRect.bottom) + 'px';
-                                
-                                // Update position on hover
-                                menuItem.addEventListener('mouseenter', function() {
-                                    const navbarRect = navbar.getBoundingClientRect();
-                                    megaMenu.style.top = (navbarRect.bottom) + 'px';
-                                });
-                            }
-                        });
-                    }
-                });
-            }
-        }
-        
-        // Run on load
-        positionMegaMenus();
-        
-        // Update on scroll and resize
-        let positionTimer;
-        window.addEventListener('scroll', function() {
-            clearTimeout(positionTimer);
-            positionTimer = setTimeout(positionMegaMenus, 10);
-        });
-        
-        window.addEventListener('resize', function() {
-            clearTimeout(positionTimer);
-            positionTimer = setTimeout(positionMegaMenus, 10);
-        });
+        // Desktop mega menu positioning handled by CSS
     }
 })();

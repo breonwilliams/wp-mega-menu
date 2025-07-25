@@ -116,11 +116,10 @@
 /* Mega menu dropdown - High specificity for theme override */
 .bliss-mega-menu .wp-nav-menu > .menu-item .sub-menu.mega-menu,
 .bliss-mega-menu ul.wp-nav-menu > li.menu-item .sub-menu.mega-menu {
-    position: fixed !important;
-    top: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    transform: translateY(-10px) !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-10px) !important;
     width: 100vw !important;
     max-width: none !important;
     background: white !important;
@@ -142,7 +141,7 @@
 .bliss-mega-menu ul.wp-nav-menu > li.menu-item:hover .sub-menu.mega-menu {
     opacity: 1 !important;
     visibility: visible !important;
-    transform: translateY(0) !important;
+    transform: translateX(-50%) translateY(0) !important;
 }
 
 .bliss-mega-menu .sub-menu.mega-menu .mega-content,
@@ -534,13 +533,12 @@
 /* Elementor Theme Compatibility */
 .elementor .bliss-mega-menu .sub-menu.mega-menu,
 .elementor-section .bliss-mega-menu .sub-menu.mega-menu {
-    position: fixed !important;
-    top: auto !important;
-    left: 0 !important;
-    right: 0 !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
     width: 100vw !important;
     max-width: none !important;
-    transform: translateY(0) !important;
+    transform: translateX(-50%) !important;
     margin: 0 !important;
 }
 
