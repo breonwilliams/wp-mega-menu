@@ -267,12 +267,20 @@
 }
 
 @media (max-width: 768px) {
+    /* Reset full-width positioning on mobile */
     .bliss-mega-menu {
-        position: relative;
+        position: relative !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
     }
     
     .bliss-mega-menu .navbar {
-        position: relative;
+        position: relative !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
     
     .bliss-mega-menu .nav-container {
@@ -310,18 +318,27 @@
         display: flex !important;
     }
 
-    .bliss-mega-menu .menu-item {
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        display: block;
+    .bliss-mega-menu .wp-nav-menu > .menu-item,
+    .bliss-mega-menu ul.wp-nav-menu > li.menu-item {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        display: block !important;
+        position: relative !important;
+        margin: 0 !important;
+        transform: none !important;
     }
 
-    .bliss-mega-menu .menu-item > a {
-        padding: 15px 20px;
-        border-bottom: none;
-        width: 100%;
-        display: block;
-        box-sizing: border-box;
+    .bliss-mega-menu .menu-item > a,
+    .bliss-mega-menu .menu-item .menu-header > a {
+        padding: 15px 20px !important;
+        border-bottom: none !important;
+        width: 100% !important;
+        display: block !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
     }
 
     /* Hide desktop arrows on mobile */
