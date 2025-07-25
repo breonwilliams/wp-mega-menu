@@ -339,6 +339,13 @@
         transform: none !important;
         left: auto !important;
         right: auto !important;
+        color: white !important;
+        text-decoration: none !important;
+    }
+    
+    .bliss-mega-menu .menu-item > a:hover,
+    .bliss-mega-menu .menu-item .menu-header > a:hover {
+        background-color: rgba(255,255,255,0.1) !important;
     }
 
     /* Hide desktop arrows on mobile */
@@ -388,6 +395,7 @@
         content: '▼';
         display: block;
         transition: transform 0.3s ease;
+        color: white !important;
     }
 
     .bliss-mega-menu .menu-item.mobile-open .mobile-submenu-toggle::before {
@@ -442,45 +450,45 @@
 
     .bliss-mega-menu .sub-menu.mega-menu .section-header,
     .bliss-mega-menu .sub-menu.mega-menu .county-header {
-        font-size: 16px;
-        margin-bottom: 15px;
-        color: white;
-        border-bottom-color: rgba(255,255,255,0.2);
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+        color: white !important;
+        border-bottom-color: rgba(255,255,255,0.2) !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .section-header::before,
     .bliss-mega-menu .sub-menu.mega-menu .county-header::before {
-        background: linear-gradient(135deg, #51ACFB, #93c5fd);
+        background: linear-gradient(135deg, #51ACFB, #93c5fd) !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .section-header:hover,
     .bliss-mega-menu .sub-menu.mega-menu .county-header:hover {
-        color: #51ACFB;
+        color: #51ACFB !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .service-group-link {
-        font-size: 15px;
-        color: #e5e7eb;
+        font-size: 15px !important;
+        color: #e5e7eb !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .service-group-link:hover {
-        color: #51ACFB;
+        color: #51ACFB !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .service-child a,
     .bliss-mega-menu .sub-menu.mega-menu .city-item a {
-        font-size: 13px;
-        padding-left: 8px;
-        color: #cbd5e1;
-        border-left-color: transparent;
+        font-size: 13px !important;
+        padding-left: 8px !important;
+        color: #cbd5e1 !important;
+        border-left-color: transparent !important;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .service-child a:hover,
     .bliss-mega-menu .sub-menu.mega-menu .city-item a:hover {
-        padding-left: 12px;
-        color: #51ACFB;
-        background-color: rgba(255,255,255,0.1);
-        border-left-color: #51ACFB;
+        padding-left: 12px !important;
+        color: #51ACFB !important;
+        background-color: rgba(255,255,255,0.1) !important;
+        border-left-color: #51ACFB !important;
     }
 
     /* Ensure proper display of mega columns on mobile */
