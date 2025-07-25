@@ -1,0 +1,473 @@
+/* Bliss Mega Menu Styles */
+.bliss-mega-menu * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure full width container */
+.bliss-mega-menu {
+    width: 100%;
+    position: relative;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    left: 50%;
+    right: 50%;
+}
+
+/* WordPress-compatible menu structure */
+.bliss-mega-menu .navbar {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    padding: 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100vw;
+}
+
+.bliss-mega-menu .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Mobile menu toggle */
+.bliss-mega-menu .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+}
+
+/* WordPress menu classes */
+.bliss-mega-menu .wp-nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.bliss-mega-menu .menu-item {
+    position: relative;
+}
+
+.bliss-mega-menu .menu-header {
+    display: contents;
+}
+
+.bliss-mega-menu .menu-item > a,
+.bliss-mega-menu .menu-header > a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 25px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Desktop dropdown indicator */
+.bliss-mega-menu .menu-item.menu-item-has-children .menu-header > a::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid white;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.bliss-mega-menu .menu-item.menu-item-has-children:hover .menu-header > a::after {
+    opacity: 1;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.bliss-mega-menu .menu-item:hover > a,
+.bliss-mega-menu .menu-item:hover .menu-header > a,
+.bliss-mega-menu .menu-item.current-menu-item > a,
+.bliss-mega-menu .menu-item.current-menu-item .menu-header > a {
+    background-color: rgba(255,255,255,0.1);
+    border-bottom-color: #51ACFB;
+}
+
+/* Hide mobile toggle on desktop */
+.bliss-mega-menu .mobile-submenu-toggle {
+    display: none;
+}
+
+/* Mega menu dropdown */
+.bliss-mega-menu .sub-menu.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 100vw;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: block !important;
+    max-height: calc(100vh - 73px);
+    overflow-y: auto;
+}
+
+.bliss-mega-menu .menu-item:hover .sub-menu.mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.bliss-mega-menu .mega-content,
+.bliss-mega-menu .areas-mega-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.bliss-mega-menu .mega-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Level 1: Main section headers */
+.bliss-mega-menu .section-header,
+.bliss-mega-menu .county-header {
+    color: #1e3a8a;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.bliss-mega-menu .section-header:hover,
+.bliss-mega-menu .county-header:hover {
+    color: #3b82f6;
+}
+
+.bliss-mega-menu .section-header::before,
+.bliss-mega-menu .county-header::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    border-radius: 2px;
+}
+
+/* Level 2: Service group headers */
+.bliss-mega-menu .service-group {
+    margin-bottom: 25px;
+}
+
+.bliss-mega-menu .service-group-link {
+    color: #374151;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.bliss-mega-menu .service-group-link:hover {
+    color: #3b82f6;
+}
+
+/* Level 3: Individual service links */
+.bliss-mega-menu .service-children,
+.bliss-mega-menu .city-list {
+    list-style: none;
+    margin-left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.bliss-mega-menu .service-child,
+.bliss-mega-menu .city-item {
+    margin-bottom: 8px;
+}
+
+.bliss-mega-menu .service-child a,
+.bliss-mega-menu .city-item a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 4px 0;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+}
+
+.bliss-mega-menu .service-child a:hover,
+.bliss-mega-menu .city-item a:hover {
+    color: #3b82f6;
+    border-left-color: #3b82f6;
+    background-color: #f8fafc;
+    padding-left: 16px;
+}
+
+/* County section */
+.bliss-mega-menu .county-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+    .bliss-mega-menu .mega-content,
+    .bliss-mega-menu .areas-mega-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bliss-mega-menu {
+        position: relative;
+    }
+    
+    .bliss-mega-menu .navbar {
+        position: relative;
+    }
+    
+    .bliss-mega-menu .nav-container {
+        padding: 0 15px;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .bliss-mega-menu .mobile-menu-toggle {
+        display: block;
+    }
+
+    .bliss-mega-menu .wp-nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1e3a8a;
+        flex-direction: column;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        z-index: 999;
+        width: 100%;
+        max-height: calc(100vh - 73px);
+    }
+
+    .bliss-mega-menu .wp-nav-menu.mobile-open {
+        display: flex;
+    }
+
+    .bliss-mega-menu .menu-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: block;
+    }
+
+    .bliss-mega-menu .menu-item > a {
+        padding: 15px 20px;
+        border-bottom: none;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    /* Hide desktop arrows on mobile */
+    .bliss-mega-menu .menu-item.menu-item-has-children .menu-header > a::after {
+        display: none;
+    }
+
+    .bliss-mega-menu .menu-item.menu-item-has-children {
+        display: block;
+        width: 100%;
+    }
+
+    .bliss-mega-menu .menu-item.menu-item-has-children .menu-header {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .bliss-mega-menu .menu-item.menu-item-has-children .menu-header > a {
+        flex: 1;
+        padding: 15px 20px;
+        border-bottom: none;
+    }
+
+    .bliss-mega-menu .mobile-submenu-toggle {
+        display: flex;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        padding: 15px 20px;
+        cursor: pointer;
+        width: 60px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 0;
+        position: relative;
+    }
+
+    .bliss-mega-menu .mobile-submenu-toggle:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    /* Rotate only the arrow content, not the button */
+    .bliss-mega-menu .mobile-submenu-toggle::before {
+        content: '▼';
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .bliss-mega-menu .menu-item.mobile-open .mobile-submenu-toggle::before {
+        transform: rotate(180deg);
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu {
+        position: static !important;
+        width: 100%;
+        box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: none !important;
+        background: #2563eb;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .bliss-mega-menu .menu-item.mobile-open .sub-menu.mega-menu {
+        opacity: 1;
+        visibility: visible;
+        max-height: none;
+        overflow: visible;
+        display: block !important;
+    }
+
+    .bliss-mega-menu .mega-content,
+    .bliss-mega-menu .areas-mega-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 20px 40px 20px; /* Extra bottom padding */
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .section-header,
+    .bliss-mega-menu .sub-menu.mega-menu .county-header {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: white;
+        border-bottom-color: rgba(255,255,255,0.2);
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .section-header::before,
+    .bliss-mega-menu .sub-menu.mega-menu .county-header::before {
+        background: linear-gradient(135deg, #51ACFB, #93c5fd);
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .section-header:hover,
+    .bliss-mega-menu .sub-menu.mega-menu .county-header:hover {
+        color: #51ACFB;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .service-group-link {
+        font-size: 15px;
+        color: #e5e7eb;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .service-group-link:hover {
+        color: #51ACFB;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .service-child a,
+    .bliss-mega-menu .sub-menu.mega-menu .city-item a {
+        font-size: 13px;
+        padding-left: 8px;
+        color: #cbd5e1;
+        border-left-color: transparent;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .service-child a:hover,
+    .bliss-mega-menu .sub-menu.mega-menu .city-item a:hover {
+        padding-left: 12px;
+        color: #51ACFB;
+        background-color: rgba(255,255,255,0.1);
+        border-left-color: #51ACFB;
+    }
+
+    /* Ensure proper display of mega columns on mobile */
+    .bliss-mega-menu .sub-menu.mega-menu .mega-column {
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .service-group {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .bliss-mega-menu .sub-menu.mega-menu .service-children {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .bliss-mega-menu .mega-content,
+    .bliss-mega-menu .areas-mega-content {
+        padding: 15px;
+        gap: 0px;
+        grid-template-columns: 1fr;
+    }
+
+    .bliss-mega-menu .section-header,
+    .bliss-mega-menu .county-header {
+        font-size: 15px;
+    }
+
+    .bliss-mega-menu .service-group-link {
+        font-size: 14px;
+    }
+}
