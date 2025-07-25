@@ -55,8 +55,10 @@
     flex: 1;
 }
 
-.bliss-mega-menu .menu-item {
-    position: relative;
+.bliss-mega-menu .wp-nav-menu > .menu-item,
+.bliss-mega-menu ul.wp-nav-menu > li.menu-item {
+    position: relative !important;
+    display: inline-block !important;
 }
 
 .bliss-mega-menu .menu-header {
@@ -110,59 +112,74 @@
     display: none;
 }
 
-/* Mega menu dropdown */
-.bliss-mega-menu .sub-menu.mega-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    width: 100vw;
-    background: white;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
+/* Mega menu dropdown - High specificity for theme override */
+.bliss-mega-menu .wp-nav-menu > .menu-item .sub-menu.mega-menu,
+.bliss-mega-menu ul.wp-nav-menu > li.menu-item .sub-menu.mega-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-10px) !important;
+    width: 100vw !important;
+    background: white !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    z-index: 99999 !important;
     display: block !important;
-    max-height: calc(100vh - 73px);
-    overflow-y: auto;
+    max-height: calc(100vh - 73px) !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
 }
 
-.bliss-mega-menu .menu-item:hover .sub-menu.mega-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+.bliss-mega-menu .wp-nav-menu > .menu-item:hover .sub-menu.mega-menu,
+.bliss-mega-menu ul.wp-nav-menu > li.menu-item:hover .sub-menu.mega-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
 }
 
-.bliss-mega-menu .mega-content,
-.bliss-mega-menu .areas-mega-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+.bliss-mega-menu .sub-menu.mega-menu .mega-content,
+.bliss-mega-menu .sub-menu.mega-menu .areas-mega-content {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 40px !important;
+    background: transparent !important;
+    position: relative !important;
+    width: 100% !important;
 }
 
-.bliss-mega-menu .mega-column {
-    display: flex;
-    flex-direction: column;
+.bliss-mega-menu .sub-menu.mega-menu .mega-column {
+    display: flex !important;
+    flex-direction: column !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* Level 1: Main section headers */
-.bliss-mega-menu .section-header,
-.bliss-mega-menu .county-header {
-    color: #1e3a8a;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e5e7eb;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.bliss-mega-menu .sub-menu.mega-menu .section-header,
+.bliss-mega-menu .sub-menu.mega-menu .county-header {
+    color: #1e3a8a !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #e5e7eb !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+    background: transparent !important;
+    line-height: normal !important;
 }
 
 .bliss-mega-menu .section-header:hover,
@@ -470,4 +487,35 @@
     .bliss-mega-menu .service-group-link {
         font-size: 14px;
     }
+}
+
+/* Elementor Theme Compatibility */
+.elementor .bliss-mega-menu .sub-menu.mega-menu,
+.elementor-section .bliss-mega-menu .sub-menu.mega-menu {
+    position: absolute !important;
+    top: calc(100% - 1px) !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    transform: translateX(-50%) !important;
+    margin-left: 50% !important;
+}
+
+/* Override Elementor menu item styles */
+.elementor .bliss-mega-menu .menu-item {
+    position: relative !important;
+}
+
+/* Ensure mega menu appears above Elementor elements */
+.elementor .bliss-mega-menu .sub-menu.mega-menu[data-bliss-mega="true"] {
+    z-index: 999999 !important;
+}
+
+/* Fix for themes that use flex on menu items */
+.bliss-mega-menu .wp-nav-menu > li.menu-item,
+.bliss-mega-menu .wp-nav-menu > .menu-item {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }

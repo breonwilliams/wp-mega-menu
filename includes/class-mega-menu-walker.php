@@ -17,7 +17,7 @@ class Bliss_Mega_Menu_Walker extends Walker_Nav_Menu {
         
         // Starting a mega menu dropdown
         if ($depth === 0 && $this->has_mega_menu) {
-            $output .= "\n$indent<ul class=\"sub-menu mega-menu\">\n";
+            $output .= "\n$indent<ul class=\"sub-menu mega-menu\" data-bliss-mega=\"true\">\n";
             $output .= "$indent\t<div class=\"mega-content\">\n";
             $this->in_mega_menu = true;
         } 

@@ -97,27 +97,6 @@
             }, 250);
         });
         
-        // Adjust mega menu position on scroll
-        let scrollTimer;
-        window.addEventListener('scroll', function() {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(function() {
-                const megaMenus = document.querySelectorAll('.bliss-mega-menu');
-                
-                megaMenus.forEach(function(menuWrapper) {
-                    const navbar = menuWrapper.querySelector('.navbar');
-                    const dropdowns = menuWrapper.querySelectorAll('.sub-menu.mega-menu');
-                    
-                    if (navbar && dropdowns.length) {
-                        const navbarRect = navbar.getBoundingClientRect();
-                        const navbarBottom = navbarRect.bottom;
-                        
-                        dropdowns.forEach(function(dropdown) {
-                            dropdown.style.top = navbarBottom + 'px';
-                        });
-                    }
-                });
-            }, 10);
-        });
+        // Desktop mega menu positioning handled by CSS only
     }
 })();
