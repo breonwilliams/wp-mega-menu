@@ -499,7 +499,7 @@
 
     .bliss-mega-menu .sub-menu.mega-menu .service-group {
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 
     .bliss-mega-menu .sub-menu.mega-menu .service-children {
